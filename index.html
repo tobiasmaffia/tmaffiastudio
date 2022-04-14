@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles-compilado.css">
+    <title>Portfolio Tobias Maffia</title>
+    <script src="/scripts/app.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav-logo">
+                    <a href="index.html" class="nav-logo__link" title="logo">tmaffia.studio</a>
+                </div>
+                <div class="nav-menu">
+                    <ul class="nav-menu__item">
+                        <li><a href="#work" class="nav-menu__link">.work</a></li>
+                        <li><a href="#contact" class="nav-menu__link">.contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="hero">
+                <div class="hero-text">
+                    <h1 id="about" class="hero-text__main">Hi, i'm Tobias!</h1>
+                    <h2 class="hero-text__main2">UX/UI designer and developer</h2>
+                    <p class="hero-text__subs">I’m passionate about technology,
+                        innovation and digital transformation.
+                        I’m very user oriented and a UX lover.
+                        I like food, music, photography and I’m
+                        also a web developer.</p>
+                    <a class="hero-text__btn" href="#contact">Hey, let's work together</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main -->
+    <main class="main">
+        <section class="about">
+            <div class="container">
+                <div class="about-image">
+                    <img class="about-image__main" src="/images/mememe.png" alt="Images">
+                </div>
+                <div class="about-text">
+                    <h1 id="work" class="about-text__main"> MY WORK</h1>
+                    <p class="about-text__subs">Web design and development, UX/UI design, branding, corporate identity,
+                        logos, photography, I strive to create culturally-charged work that is emotionally resonant and user oriented.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="service">
+            <div class="container">
+                <div class="card card-1">
+                    <div class="card-image">
+                        <a href="webDev.html" target="_blank"><img src="/images/codeimage.png" alt="Images" ></a>
+                    </div>
+                    <div class="card-text">
+                        <a href="webDev.html" target="_blank"><h2 class="card-text__title">Web development</h2></a>
+                        <p class="card-text__subs">I create cool responsive websites, the are fast and easy to use. I love front-end development, don't  hate back-end, but don't love it either. 
+                        </p>
+                    </div>
+                </div>
+                <div class="card card-2">
+                    <div class="card-image">
+                        <a href="uxui.html" target="_blank"><img src="/images/uxuiimage.png" alt="Images"></a>
+                    </div>
+                    <div class="card-text">
+                        <a href="uxui.html" target="_blank"><h2 class="card-text__title">UX/UI design</h2></a>
+                        <p class="card-text__subs">I look for the most easy, intuitive, and friendly way to solve user problems based on research, active listening, hard work and design.
+                        </p>
+                    </div>
+                </div>
+                <div class="card card-3">
+                    <div class="card-image">
+                        <a href="film.html">  <img src="/images/photosec.png" alt="Images"></a>
+                    </div>
+                    <div class="card-text">
+                        <a href="film.html">  <h2 class="card-text__title">Film photography</h2></a>
+                        <a href="film.html"> <p class="card-text__subs" id="filmlink"> Film photography is not dead: It's cool. So go ahead, try shooting analog. Oh, also check out my work and see my esthetic.
+                        </p></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contact">
+            <div class="container">
+                <div class="contact-image">
+                    <img src="/images/thestudio.png" alt="Images">
+                </div>
+                <div id="contact" class="contact-form">
+                    <h2 class="contact-title">Let's talk!</h2>
+                    <form class="form" name="contact-form" netlify>
+                        <div class="form-group group-1">
+                            <input type="text" name="name" class="form-input" placeholder="How's your name?">
+                        </div>
+                        <div class="form-group group-2">
+                            <input type="text" name="email" class="form-input" placeholder="Please type your Email">
+                        </div>
+                        <div class="form-group group-3">
+                            <textarea name="message" rows="5" class="form-textarea"
+                                placeholder="You cant ask me whatever you want, or jus say hi!"></textarea>
+                        </div>
+                        <div class="form-group group-4">
+                            <input type="submit" class="form-submit" value="Contact me">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-menu">
+                <ul class="footer-menu__item">
+                    <li><a href="https://www.linkedin.com/in/tobiasmaffia/" class="footer-menu__link" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.instagram.com/tmaffia.studio/" class="footer-menu__link" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.behance.net/tobiasmaffia" class="footer-menu__link" target="_blank">Behance</a></li>
+                    <li><a href="mailto:maffiatobias@gmail.com" class="footer-menu__link" target="_blank">Email</a></li>
+                </ul>
+            </div>
+            <div class="footer-copy">
+                <p>Based in Buenos Aires, Argentina</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
