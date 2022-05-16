@@ -11,17 +11,71 @@
 </head>
 
 <body>
+    
+    <!-- Loading CSS -->
+<style>
+    .loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(0, 0, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: 1s all;
+        opacity: 0;
+    }
+    .loading.show {
+        opacity: 1;
+    }
+    .loading .spin {
+        border: 3px solid hsla(0, 0%, 100%, 0.2);
+        border-top-color: #ffffff;
+        border-radius: 50%;
+        width: 3em;
+        height: 3em;
+        animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }          
+    
+    
+</style>
+
+<!-- Loading HTML -->
+<div class="loading show">
+    <div class="spin"></div>
+</div>
+
+<!-- Loading Javascript -->
+<script>
+// Loading
+var Loading=(loadingDelayHidden=0)=>{let loading=null;const myLoadingDelayHidden=loadingDelayHidden;let imgs=[];let lenImgs=0;let counterImgsLoading=0;function incrementCounterImgs(){counterImgsLoading+=1;if(counterImgsLoading===lenImgs){hideLoading()}}function hideLoading(){if(loading!==null){loading.classList.remove('show');setTimeout(function(){loading.remove()},myLoadingDelayHidden)}}function init(){document.addEventListener('DOMContentLoaded',function(){loading=document.querySelector('.loading');imgs=Array.from(document.images);lenImgs=imgs.length;if(imgs.length===0){hideLoading()}else{imgs.forEach(function(img){img.addEventListener('load',incrementCounterImgs,false)})}})}return{'init':init}}
+
+Loading(1000).init();
+
+
+</script>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
             <nav class="nav">
                 <div class="nav-logo">
-                    <a href="index.html" class="nav-logo__link" title="logo">tmaffia.studio</a>
+                    <a id="logo" href="index.html" class="nav-logo__link" title="logo">tmaffia.studio</a>
                 </div>
                 <div class="nav-menu">
                     <ul class="nav-menu__item">
                         <li><a href="#work" class="nav-menu__link">.work</a></li>
+                        <li><a href="/about.html" class="nav-menu__link">.about</a></li>
                         <li><a href="#contact" class="nav-menu__link">.contact</a></li>
+                        <li><a href="/images/TOBIAS_MAFFIA_RESUME.pdf" download="Tobias-Maffia-Resume" class="nav-menu__link">.my resume</a></li>
                     </ul>
                 </div>
             </nav>
@@ -34,20 +88,20 @@
                         I’m very user oriented and a UX lover.
                         I like food, music, photography and I’m
                         also a web developer.</p>
-                    <a class="hero-text__btn" href="#contact">Hey, let's work together</a>
+                    
                 </div>
             </div>
         </div>
     </header>
     <!-- Main -->
     <main class="main">
-        <section class="about">
+        <section id="work" class="about">
             <div class="container">
                 <div class="about-image">
                     <img class="about-image__main" src="/images/mememe.png" alt="Images">
                 </div>
                 <div class="about-text">
-                    <h1 id="work" class="about-text__main"> MY WORK</h1>
+                    <h1 class="about-text__main"> MY WORK</h1>
                     <p class="about-text__subs">Web design and development, UX/UI design, branding, corporate identity,
                         logos, photography, I strive to create culturally-charged work that is emotionally resonant and user oriented.
                     </p>
@@ -58,20 +112,20 @@
             <div class="container">
                 <div class="card card-1">
                     <div class="card-image">
-                        <a href="webDev.html" target="_blank"><img src="/images/codeimage.png" alt="Images" ></a>
+                        <a href="webDev.html" ><img src="/images/codeimage.png" alt="Images" ></a>
                     </div>
                     <div class="card-text">
-                        <a href="webDev.html" target="_blank"><h2 class="card-text__title">Web development</h2></a>
+                        <a href="webDev.html" ><h2 class="card-text__title">Web development</h2></a>
                         <p class="card-text__subs">I create cool responsive websites, the are fast and easy to use. I love front-end development, don't  hate back-end, but don't love it either. 
                         </p>
                     </div>
                 </div>
                 <div class="card card-2">
                     <div class="card-image">
-                        <a href="uxui.html" target="_blank"><img src="/images/uxuiimage.png" alt="Images"></a>
+                        <a href="uxui.html" ><img src="/images/uxuiimage.png" alt="Images"></a>
                     </div>
                     <div class="card-text">
-                        <a href="uxui.html" target="_blank"><h2 class="card-text__title">UX/UI design</h2></a>
+                        <a href="uxui.html" ><h2 class="card-text__title">UX/UI design</h2></a>
                         <p class="card-text__subs">I look for the most easy, intuitive, and friendly way to solve user problems based on research, active listening, hard work and design.
                         </p>
                     </div>
@@ -97,14 +151,14 @@
                     <h2 class="contact-title">Let's talk!</h2>
                     <form class="form" name="contact-form" netlify>
                         <div class="form-group group-1">
-                            <input type="text" name="name" class="form-input" placeholder="How's your name?">
+                            <input type="text" name="name" class="form-input" placeholder="How's your name?" required>
                         </div>
                         <div class="form-group group-2">
-                            <input type="text" name="email" class="form-input" placeholder="Please type your Email">
+                            <input type="text" name="email" class="form-input" placeholder="Please type your Email" required>
                         </div>
                         <div class="form-group group-3">
                             <textarea name="message" rows="5" class="form-textarea"
-                                placeholder="You cant ask me whatever you want, or jus say hi!"></textarea>
+                                placeholder="You cant ask me whatever you want, or just say hi!" required></textarea>
                         </div>
                         <div class="form-group group-4">
                             <input type="submit" class="form-submit" value="Contact me">
@@ -116,6 +170,7 @@
     </main>
     <footer class="footer">
         <div class="container">
+            <a href="#logo" class="return"><i class="fa fa-arrow-up"></i></a>
             <div class="footer-menu">
                 <ul class="footer-menu__item">
                     <li><a href="https://www.linkedin.com/in/tobiasmaffia/" class="footer-menu__link" target="_blank">LinkedIn</a></li>

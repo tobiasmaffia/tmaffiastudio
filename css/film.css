@@ -7,63 +7,109 @@ The 'supports' rule will only run if your browser supports CSS grid.
 Flexbox is used as a fallback so that browsers which don't support grid will still recieve an identical layout.
 
 */
-
-:root {
-	/* Base font size */
-	font-size: 10px;
-}
-
-
-*,
-*::before,
-*::after {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+* {
+	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
-  text-decoration: none;
-  list-style: none;
+	text-decoration: none;
+	list-style: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
 }
+
+img {  
+	background:url(https://tenor.com/es/ver/you-tube-loader-load-gif-7427025) center no-repeat;  
+  }  
+  
 
 body {
-	min-height: 100vh;
-	background-color: #fafafa;
-}
-
-.container {
-	max-width: 100rem;
-	margin: 0 auto;
-	padding: 0 2rem 2rem;
-}
-.nav-logo {
-  font-family: inherit;
-  line-height: inherit;
-}
-
-.nav-logo__link {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 3rem;
-  font-weight: 700;
-  color: #000000;
-}
-.heading {
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-	font-size: 4rem;
-	font-weight: 700;
-	line-height: 1.5;
-	text-align: center;
-	padding: 3.5rem 0;
-	color: #1a1a1a;
-}
+	font-size: 1rem;
+	font-weight: normal;
+	line-height: 1.4;
+	background: #ffffff;
+	color: #000000;
+  }
 
-.heading span {
-	display: block;
-}
+  .header{
+		padding: 0 1rem;
+		margin: 0 auto;
+		max-width: 68rem;
+		width: 100%;
+	  }
+  
+.header .nav {
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+	flex-basis: auto;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.2rem 0;
+	margin: 0 auto;
+  }
+
+  
+  .header .nav-logo {
+	font-family: inherit;
+	line-height: inherit;
+  }
+  
+  .header .nav-logo__link {
+	font-size: 1.7rem;
+	font-weight: 700;
+	color: #000000;
+  }
+  
+  .header .nav-menu__item {
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+	flex-basis: auto;
+  }
+  
+  .header .nav-menu__link {
+	margin: 2rem;
+	font-family: inherit;
+	font-size: 1rem;
+	font-weight: bold;
+	color: #000000;
+  }
+  
+  .header .nav-menu__link:hover {
+	color: #000000;
+  }
+	.hero {
+		padding: 0 1rem;
+		margin: 0 auto;
+		max-width: 68rem;
+		width: 100%;
+	
+  }
+
+	.hero-text {
+	order: 2;
+	font-size: 1.2rem;
+  }
+
+	.hero-text__main {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 4rem;
+    font-weight: 200%;
+    color: #000000;
+    line-height: 4rem;
+	margin-top: 5rem;
+	text-align: center;
+
+
+  }
 
 .gallery {
+	max-width: 100rem;
+	padding: 7rem;
 	display: flex;
 	flex-wrap: wrap;
-	/* Compensate for excess margin on outer gallery flex items */
-	margin: -1rem -1rem;
+
 }
 
 .gallery-item {
@@ -86,12 +132,23 @@ body {
 .gallery-image:hover {
 	transform: scale(1.15);
 }
-
 .footer {
-  padding: 3rem 0;
-  color: #000000;
-  font-size: 1.5rem;
-  font-weight: 400;
+
+  background: #000000;
+  color: #ffffff;
+
+  padding: 3rem 8rem;
+  margin: 0 auto;
+
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  flex-basis: auto;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .footer-menu__item {
@@ -104,9 +161,102 @@ body {
 .footer-menu__link {
   margin: 0 2rem 0 0;
   font-family: inherit;
-  font-size: 1.5rem;
-  color: #000000;
+  font-size: 1rem;
+  color: #ffffff;
 }
+.return {
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	cursor: pointer;
+	bottom: 15px;
+	right: 15px;
+	line-height: 50px;
+	text-align: center;
+	background-image: url(/images/ios-arrow-dropup-circle.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+  }
+  
+
+@media only screen and (max-width: 600px) {
+
+	.return {
+		width: 30px;
+		height: 30px;
+		bottom: 5px;
+		right: 5px;
+	  }
+
+	.header {
+		grid-template-columns: 1fr;
+		justify-content: center;
+		margin-top: 5rem;
+	  }
+	 .hero {
+		grid-template-columns: 1fr;
+		justify-content: center;
+		margin-top: 5rem;
+	  }
+	.header .nav {
+	  flex-direction: column;
+	  justify-content: center;
+	  margin-bottom: 0rem;
+	}
+	.header .nav-menu__link {
+		margin: 14px;
+		font-family: inherit;
+		font-size: 14px;
+		font-weight: bold;
+		color: #000000;
+	  }
+
+ .hero-text__main {
+        font-size: 3rem;
+        line-height: 3rem;
+      }
+
+	.gallery{
+		grid-template-columns: 1fr;
+		justify-content: center;
+
+	  }
+
+	  .gallery-item {
+		  padding: 1rem;
+	  }
+
+	  .footer{
+		padding: 4rem 8rem;
+		margin: 0rem auto 0rem auto;
+	  }
+	  
+	  .footer .container {
+		flex-direction: column;
+		justify-content: center;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	  }
+	
+	  .footer-menu__item {
+		display: flex;
+		flex-direction: row;
+		flex: 1;
+		flex-basis: auto;
+		margin-bottom: 2rem;
+	  }
+	
+	  .footer-menu__link {
+		margin: 0 1rem 0 1rem;
+		font-family: inherit;
+		font-size: 1rem;
+		color: #ffffff;
+	  }
+	
+	
+    }
 
 /*
 

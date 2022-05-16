@@ -12,7 +12,7 @@ body {
   font-weight: normal;
   line-height: 1.4;
   background: #ffffff;
-  color: #333333;
+  color: #000000;
 }
 
 .container {
@@ -52,7 +52,7 @@ body {
 }
 
 .header .nav-menu__link {
-  margin: 0 2rem 0 0;
+  margin: 0 2rem 0 1rem;
   font-family: inherit;
   font-size: 1rem;
   font-weight: bold;
@@ -65,8 +65,6 @@ body {
 
 .header .hero {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -74,50 +72,33 @@ body {
 
 .header .hero-text__main {
   font-family: inherit;
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 4rem;
+  font-weight: 300;
   line-height: inherit;
   text-transform: uppercase;
-  color: #333333;
+  color: #000000;
 }
 .header .hero-text__main2 {
   font-family: inherit;
-  font-size: 4rem;
-  font-weight: 500;
+  font-size: 5rem;
+  font-weight: 600;
   line-height: inherit;
+  line-height: 5rem;
   text-transform: uppercase;
-  color: #333333;
+  color: #000000;
 }
 
 .header .hero-text__subs {
   font-family: inherit;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 400;
-  color: #333333;
+  color: #000000;
   margin: 1rem 0 3rem 0;
 }
 
-.header .hero-text__btn {
-  padding: 1rem 2rem;
-  font-family: inherit;
-  font-size: 1.2rem;
-  font-weight: 500;
-  text-align: center;
-  color: #ffffff;
-  background: #000000;
-  border: none;
-  outline: none;
-  border-radius: 2px;
-}
-
-.header .hero-image__main {
-  width: 140%;
-  height: auto;
-}
 
 .main .about {
-  background: #FAFAFA;
-  margin-top: 0.5rem;
+  background: hsl(0, 0%, 98%);
 }
 
 .main .about .container {
@@ -147,12 +128,13 @@ body {
   font-family: inherit;
   font-size: 1.3rem;
   font-weight: 400;
-  color: #333333;
+  color: #000000;
   margin: 1rem 0 0 0;
 }
 
 .main .service {
-  margin-top: 4rem;
+  margin-top: 10rem;
+  margin-bottom: 15rem;
 }
 
 .main .service .container {
@@ -290,7 +272,7 @@ body {
 
 .footer {
   padding: 3rem 0;
-  background: #333333;
+  background: #000000;
   color: #ffffff;
 }
 
@@ -317,11 +299,45 @@ body {
   color: #ffffff;
 }
 
+.return {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  cursor: pointer;
+  bottom: 15px;
+  right: 15px;
+  line-height: 50px;
+  text-align: center;
+  background-image: url(/images/ios-arrow-dropup-circle.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 @media only screen and (max-width: 600px) {
+
+  .return {
+    width: 30px;
+    height: 30px;
+    bottom: 5px;
+    right: 5px;
+  }
+
   .header .nav {
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 0rem;
+  
   }
+
+  .header .nav-menu__link {
+    margin: 14px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+  }
+  
 
   .header .hero {
     grid-template-columns: 1fr;
@@ -334,6 +350,24 @@ body {
     font-size: 1.2rem;
   }
 
+  .header .hero-text {
+    order: 2;
+    font-size: 1.2rem;
+  }
+  .header .hero-text__main {
+      font-size: 3rem;
+      line-height: 3rem;
+    }
+    .header .hero-text__main2 {
+      padding-top: 1rem;
+      font-size: 3rem;
+      line-height: 3rem;
+    }
+
+    .header .hero-text__subs {
+      padding-top: 0.5rem;
+    }
+
   .main .about .container {
     grid-template-columns: 1fr;
     justify-content: center;
@@ -344,16 +378,24 @@ body {
     height: auto;
   }
 
+  .main .service {
+    margin-top: 5rem;
+    margin-bottom: 8rem;
+  }
+
   .main .service .container {
     grid-template-columns: 1fr;
     justify-content: center;
-  }
+    
+}
 
   .main .contact .container {
     grid-template-columns: 1fr;
     justify-content: center;
     margin-bottom: 2rem;
   }
+
+  
 
   .main .contact-image img {
     width: 100%;
